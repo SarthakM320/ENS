@@ -53,10 +53,6 @@ contract ENS is Initializable {
         return ensToAddress[addressToName[owner]].imageHash;
     }
     
-    function getImageHash(string calldata name) checkNameNull(name) 
-    checkNameTaken(name,true) view external returns (string memory){
-        return ensToAddress[name].imageHash;
-    }
 
     function changeName(string calldata name) checkNameNull(name) 
     checkNameTaken(name,false) checkENSMade(msg.sender,true) external {

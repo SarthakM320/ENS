@@ -1,0 +1,244 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0xD030e36F52C7F678600b5eD9AFb68f04FDdd204f",
+    "txHash": "0x4d30dd7e3f12758bb6256bd95f1bf1d9f506ea7ab5b6657f7f0f57e7e56ef4b4"
+  },
+  "proxies": [
+    {
+      "address": "0x74dA0119E5CeBcBd8Aecf7008D1dd84080E166B9",
+      "txHash": "0x9ff4aca601e5aaa389ac6d560f3eee60e5d8a1de4fbe3c0e55f2a73ca2f4c7c4",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "1ad7ec1683b69f3936749dff80228e2e20a73fb65d39abc716230e7d6c3c2b3f": {
+      "address": "0xF086518e1c988784Ce523b408D594374C96122C1",
+      "txHash": "0xe8da73d551d59f5292cf1b58477f06a215812a26ccc2a5e18a448b408421fe44",
+      "layout": {
+        "solcVersion": "0.8.10",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:67"
+          },
+          {
+            "label": "ensToAddress",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(userDataExists)601_storage)",
+            "contract": "ENS",
+            "src": "contracts\\Domain.sol:15"
+          },
+          {
+            "label": "addressToName",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_mapping(t_address,t_string_storage)",
+            "contract": "ENS",
+            "src": "contracts\\Domain.sol:16"
+          },
+          {
+            "label": "nullAddress",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "ENS",
+            "src": "contracts\\Domain.sol:17"
+          },
+          {
+            "label": "tempImageHash",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_string_storage",
+            "contract": "ENS",
+            "src": "contracts\\Domain.sol:18"
+          },
+          {
+            "label": "tempName",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_string_storage",
+            "contract": "ENS",
+            "src": "contracts\\Domain.sol:19"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_string_storage)": {
+            "label": "mapping(address => string)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(userDataExists)601_storage)": {
+            "label": "mapping(string => struct ENS.userDataExists)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(userDataExists)601_storage": {
+            "label": "struct ENS.userDataExists",
+            "members": [
+              {
+                "label": "user",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "imageHash",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "f88fc6901bdcb604ecef0d4ae8522b639c399802bb9950fa51e5058ba2a07e80": {
+      "address": "0xAf5DFF76Bd11eCBDd702b242b65744FcF7095AF5",
+      "txHash": "0xe2a98e204b32fedca6a004b0118b08836af06deca18732dec3a384a2285cb42c",
+      "layout": {
+        "solcVersion": "0.8.10",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:67"
+          },
+          {
+            "label": "ensToAddress",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(userDataExists)601_storage)",
+            "contract": "ENS",
+            "src": "contracts\\DomainV2.sol:15"
+          },
+          {
+            "label": "addressToName",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_mapping(t_address,t_string_storage)",
+            "contract": "ENS",
+            "src": "contracts\\DomainV2.sol:16"
+          },
+          {
+            "label": "nullAddress",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "ENS",
+            "src": "contracts\\DomainV2.sol:17"
+          },
+          {
+            "label": "tempImageHash",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_string_storage",
+            "contract": "ENS",
+            "src": "contracts\\DomainV2.sol:18"
+          },
+          {
+            "label": "tempName",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_string_storage",
+            "contract": "ENS",
+            "src": "contracts\\DomainV2.sol:19"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_string_storage)": {
+            "label": "mapping(address => string)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(userDataExists)601_storage)": {
+            "label": "mapping(string => struct ENS.userDataExists)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(userDataExists)601_storage": {
+            "label": "struct ENS.userDataExists",
+            "members": [
+              {
+                "label": "user",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "imageHash",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    }
+  }
+}
