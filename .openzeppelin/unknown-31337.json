@@ -1,0 +1,130 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    "txHash": "0xe2e6f1be9ec3ecd9fef1421276193afddc0141f8f09e3c792128e6133ca34bef"
+  },
+  "proxies": [
+    {
+      "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+      "txHash": "0x5f8d893d8c9e953d11c8b76ecad33febb039c9d8371beed51581ae7a1bee5b86",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "1ad7ec1683b69f3936749dff80228e2e20a73fb65d39abc716230e7d6c3c2b3f": {
+      "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      "txHash": "0x53577891a3d48531bbae9088a7c46738c1b7b54d6e13b369c079c759b517036e",
+      "layout": {
+        "solcVersion": "0.8.10",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:67"
+          },
+          {
+            "label": "ensToAddress",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(userDataExists)465_storage)",
+            "contract": "ENS",
+            "src": "contracts\\Domain.sol:15"
+          },
+          {
+            "label": "addressToName",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_mapping(t_address,t_string_storage)",
+            "contract": "ENS",
+            "src": "contracts\\Domain.sol:16"
+          },
+          {
+            "label": "nullAddress",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "ENS",
+            "src": "contracts\\Domain.sol:17"
+          },
+          {
+            "label": "tempImageHash",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_string_storage",
+            "contract": "ENS",
+            "src": "contracts\\Domain.sol:18"
+          },
+          {
+            "label": "tempName",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_string_storage",
+            "contract": "ENS",
+            "src": "contracts\\Domain.sol:19"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_string_storage)": {
+            "label": "mapping(address => string)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(userDataExists)465_storage)": {
+            "label": "mapping(string => struct ENS.userDataExists)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(userDataExists)465_storage": {
+            "label": "struct ENS.userDataExists",
+            "members": [
+              {
+                "label": "user",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "imageHash",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    }
+  }
+}

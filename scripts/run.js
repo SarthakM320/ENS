@@ -1,10 +1,12 @@
 const main = async() => {
     const [owner, randomPerson] = await hre.ethers.getSigners();
     const domainContractFactory = await hre.ethers.getContractFactory('ENS');
-    const domainContract = await domainContractFactory.deploy();
+    const domainContract = await upgrades.deployProxy(domainContractFactory,{initializer:'initialize'})
     await domainContract.deployed();
     console.log("Contract deployed to:", domainContract.address);
     console.log("Contract deployed by:", owner.address);
+
+   
 
     let txn = await domainContract.addENS('sarthak','imageHash');
     await txn.wait();

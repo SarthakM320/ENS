@@ -2,10 +2,11 @@
 pragma solidity ^0.8.10;
 
 import "hardhat/console.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+// import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import { StringUtils } from "./libraries/StringUtils.sol";
 
-contract ENS is Ownable{
+contract ENS is Initializable {
 
     struct userDataExists{
         address user;   
@@ -13,9 +14,10 @@ contract ENS is Ownable{
     }
     mapping (string => userDataExists) public ensToAddress;
     mapping (address => string) public  addressToName;
-    address public nullAddress = address(0);
+    address public nullAddress;
     string tempImageHash;
     string tempName;
+
 
     modifier checkNameTaken(string memory name,bool wantIt){
         require((ensToAddress[name].user != nullAddress) == wantIt);
@@ -30,6 +32,10 @@ contract ENS is Ownable{
     modifier checkNameNull(string memory name){
         require(StringUtils.strlen(name)>0);
         _;
+    }
+
+    function initialize() public initializer {
+        nullAddress = address(0);
     }
 
     function addENS(string calldata name,string calldata imageHash) 

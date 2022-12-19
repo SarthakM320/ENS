@@ -16,7 +16,7 @@ describe('Trial Unit Test', () => {
     it('TestCases',async()=>{
         const [owner, randomPerson] = await hre.ethers.getSigners();
         const domainContractFactory = await hre.ethers.getContractFactory('ENS');
-        const domainContract = await domainContractFactory.deploy();
+        const domainContract = await upgrades.deployProxy(domainContractFactory)
         await domainContract.deployed();
 
         // Adding a basic name to owner
