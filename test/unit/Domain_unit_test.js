@@ -72,6 +72,17 @@ describe('Trial Unit Test', () => {
         expect(user).to.equal(`${randomPerson.address}`);
         expect(imageHash).to.equal('1234');
 
+        //Checking if changing name and imagehash is working properly
+        txn = await domainContract.changeName('sar');
+        await txn.wait();
+        expect(await domainContract.addressToName(owner.address)).to.equal('sar')
+        expect(await domainContract.viewOwnerName(owner.address)).to.equal('sar')
+
+        txn = await domainContract.changeImageHash('123456789');
+        await txn.wait();
+        expect(await domainContract['getImageHash(string)']('sar')).to.equal('123456789')
+        expect(await domainContract['getImageHash(address)'](owner.address)).to.equal('123456789')
+
 
     });
 })

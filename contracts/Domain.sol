@@ -14,6 +14,8 @@ contract ENS is Ownable{
     mapping (string => userDataExists) public ensToAddress;
     mapping (address => string) public  addressToName;
     address public nullAddress = address(0);
+    string tempImageHash;
+    string tempName;
 
     modifier checkNameTaken(string memory name,bool wantIt){
         require((ensToAddress[name].user != nullAddress) == wantIt);
@@ -48,6 +50,20 @@ contract ENS is Ownable{
     function getImageHash(string calldata name) checkNameNull(name) 
     checkNameTaken(name,true) view external returns (string memory){
         return ensToAddress[name].imageHash;
+    }
+
+    function changeName(string calldata name) checkNameNull(name) 
+    checkNameTaken(name,false) checkENSMade(msg.sender,true) external {
+        tempName = addressToName[msg.sender];
+        tempImageHash = ensToAddress[tempName].imageHash;
+        addressToName[msg.sender] = name; 
+        ensToAddress[name].user = msg.sender;
+        ensToAddress[name].imageHash = tempImageHash;
+        delete ensToAddress[tempName];
+    }
+
+    function changeImageHash(string calldata imageHash) checkENSMade(msg.sender,true) external {
+        ensToAddress[addressToName[msg.sender]].imageHash = imageHash;
     }
     
 }
